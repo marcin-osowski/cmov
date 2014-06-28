@@ -1,27 +1,26 @@
-CCFLAGS=-g -Wall -O2
+CFLAGS=-g -Wall -O3
 LDFLAGS=-g
+
 NO_CMOV_FLAGS= \
 	-fno-tree-loop-if-convert \
 	-fno-tree-loop-if-convert-stores \
 	-fno-if-conversion \
 	-fno-if-conversion2
+
 OBJS=main.o test_cmov.o test_branch.o
 
 main: $(OBJS)
-	$(CC) $(LDFLAGS) $(OBJS) -o $@
-
-main.o: main.c
-	$(CC) $(CCFLAGS) -c $<
-
-test_cmov.o: test_cmov.c
-	$(CC) $(CCFLAGS)  -c $<
 
 test_branch.o: test_branch.c
-	$(CC) $(CCFLAGS) $(NO_CMOV_FLAGS) -c $<
+	$(CC) $(CFLAGS) $(NO_CMOV_FLAGS) -c $<
 
-run: main
-	./main > out.csv
+plot: out.png
+
+out.png: out.csv
 	./plot.gnuplot
+
+out.csv: main
+	./main | tee out.csv
 
 clean:
 	rm -f out.csv out.png

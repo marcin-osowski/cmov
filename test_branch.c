@@ -1,52 +1,18 @@
 
-int test_branch(int const* A, int const n, int const iters)
-{
-    int i, j;
-    int sum;
+#define FUNC_NAME test_branch
+#include "test_base.h"
+#undef FUNC_NAME
 
-    sum = 0;
-    for(i = 0; i < iters; ++i) {
-        for(j = 0; j < n; ++j) {
-            if(A[j]) {
-                sum += j;
-            }
-        }
-    }
+#define FUNC_NAME test_branch_0
+#define EXPECT 0
+#include "test_base.h"
+#undef EXPECT
+#undef FUNC_NAME
 
-    return sum;
-}
+#define FUNC_NAME test_branch_1
+#define EXPECT 1
+#include "test_base.h"
+#undef EXPECT
+#undef FUNC_NAME
 
-int test_branch_0(int const* A, int const n, int const iters)
-{
-    int i, j;
-    int sum;
-
-    sum = 0;
-    for(i = 0; i < iters; ++i) {
-        for(j = 0; j < n; ++j) {
-            if(__builtin_expect(A[j], 0)) {
-                sum += j;
-            }
-        }
-    }
-
-    return sum;
-}
-
-int test_branch_1(int const* A, int const n, int const iters)
-{
-    int i, j;
-    int sum;
-
-    sum = 0;
-    for(i = 0; i < iters; ++i) {
-        for(j = 0; j < n; ++j) {
-            if(__builtin_expect(A[j], 0)) {
-                sum += j;
-            }
-        }
-    }
-
-    return sum;
-}
 
