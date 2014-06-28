@@ -8,6 +8,9 @@ set title "Execution times on an Intel Core i5 M520"
 set xlabel "Condition probability"
 set ylabel "Compute time [s]"
 
+set xrange [0:1]
+set yrange [0:]
+
 plot \
     "out.csv" using 1:2 with lines title "time_branch", \
     "out.csv" using 1:3 with lines title "time_branch_0", \
