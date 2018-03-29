@@ -126,7 +126,7 @@ that the if's condition will be true).
 
 # Update 2018:
 
-Thanks to AndreasPK for providing this data.
+Thanks to [AndreasPK](https://github.com/AndreasPK) for providing this data.
 
 On an i7-6700k (Skylake) cmov is now faster under all circumstances:
 ![Results](https://raw.githubusercontent.com/xiadz/cmov/master/output/out-6700k.png)
