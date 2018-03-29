@@ -126,8 +126,10 @@ that the if's condition will be true).
 
 # Update 2018:
 
+Thanks to AndreasPK for providing this data.
+
 On an i7-6700k (Skylake) cmov is now faster under all circumstances:
-![Results](https://raw.githubusercontent.com/AndreasPK/cmov/master/output/out-6700k.png)
+![Results](https://raw.githubusercontent.com/xiadz/cmov/master/output/out-6700k.png)
 
 While the performance at the extremes looks the same cmov is still faster
 which becomes obvious when looking at the raw numbers:
@@ -145,7 +147,7 @@ than cmov in 10 tests I ran.
 
 These are the results I obtained on my machine. It is
 the execution time, so the lower the better:
-![Results](https://raw.githubusercontent.com/AndreasPK/cmov/master/output/out.png)
+![Results](https://raw.githubusercontent.com/xiadz/cmov/master/output/out.png)
 
 
 Three interesting facts can be read from this plot:
@@ -160,7 +162,7 @@ Three interesting facts can be read from this plot:
 
 
 The "visual proof" for the third fact:
-![Results with a parabola](https://raw.githubusercontent.com/AndreasPK/cmov/master/output/out_with_parabola.png)
+![Results with a parabola](https://raw.githubusercontent.com/xiadz/cmov/master/output/out_with_parabola.png)
 
 
 To conclude, GCC emits `cmov` by default, and it seems like
